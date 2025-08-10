@@ -25,6 +25,8 @@ Make sure to have Lean's elan installed, and a valid Lean project setup somewher
 The overall idea is this:
 ![Overall overview](https://raw.githubusercontent.com/sorgfresser/conjectureextraction/master/assets/overall.png "Overall overview")
 
-And the precise architecture is as follows:
+## Precise architecture
+There are a lot of services, all communicating via RabbitMQ.
+To reproduce, make sure to set-up RabbitMQ, ChromaDB, and Postgres. You can use docker-compose for this, following `chromadb.yml` and `rabbitmq.yml` in the root directory.
 
 ![Precise architecture](https://raw.githubusercontent.com/sorgfresser/conjectureextraction/master/assets/architecture.png "Precise architecture")
