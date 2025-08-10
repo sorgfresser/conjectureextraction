@@ -1,0 +1,16 @@
+
+services:
+  rabbit:
+    image: "rabbitmq:4-management"
+    hostname: "rabbit"
+    environment:
+      RABBITMQ_DEFAULT_VHOST: "/"
+    ports:
+      - "15672:15672"
+      - "5672:5672"
+    labels:
+      NAME: "rabbitmq"
+    volumes:
+  #    - "./enabled_plugins:/etc/rabbitmq/enabled_plugins"
+      - "./rabbitmq.conf:/etc/rabbitmq/rabbitmq.conf:ro"
+      #- "./autocluster-0.4.1.ez:/usr/lib/rabbitmq/lib/rabbitmq_server-3.5.5/plugins/autocluster-0.4.1.ez"

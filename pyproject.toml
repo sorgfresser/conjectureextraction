@@ -1,0 +1,43 @@
+[tool.poetry]
+name = "diophantineequations"
+version = "0.1.0"
+description = ""
+authors = ["Simon Sorg <simon.sorg@student.hpi.de>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+openai = "^1.57.2"
+anthropic = "^0.40.0"
+torch = { version = "^2.2.1" }
+transformers = "^4.51.0"
+chromadb = "^0.6.3"
+pytest = "^8.3.4"
+beautifulsoup4 = "^4.13.3"
+weave = "^0.51.36"
+lean-repl-py = "^0.1.12"
+tokenizers = "^0.21.0"
+htps = "^0.0.2"
+vllm = "^0.8.3"
+accelerate = "^1.1.0"
+bitsandbytes = "^0.45.0"
+flashinfer-python = "^0.2.5"
+pika = "^1.3.2"
+pika-stubs = "^0.1.3"
+sqlmodel = "^0.0.24"
+scikit-learn = "^1.6.1"
+lean-interact = "^0.5.0"
+python-telegram-bot = "^22.0"
+twilio = "^9.5.2"
+trl = "^0.17.0"
+psycopg2-binary = "^2.9.10"
+
+[[tool.poetry.source]]
+name = "torch_cpu"
+url = "https://download.pytorch.org/whl/cpu"
+priority = "explicit"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

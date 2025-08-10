@@ -1,0 +1,29 @@
+networks:
+  net:
+    driver: bridge
+services:
+  chromadb:
+    image: chromadb/chroma:0.6.3
+    volumes:
+      - ./chromadb:/chroma/chroma
+    environment:
+      - IS_PERSISTENT=TRUE
+      - PERSIST_DIRECTORY=/chroma/chroma
+      - ANONYMIZED_TELEMETRY=${ANONYMIZED_TELEMETRY:-FALSE}
+      - CHROMA_SERVER_AUTHN_CREDENTIALS=<some_password>
+      - CHROMA_SERVER_AUTHN_PROVIDER=chromadb.auth.token_authn.TokenAuthenticationServerProvider
+    ports:
+      - "8000:8000"
+    networks:
+      - net
+
+  postgresdb1:
+    image: postgres
+    restart: always
+    shm_size: 256mb
+    environment:
+      - POSTGRES_PASSWORD=<some_password>
+    ports:
+      - "5432:5432"
+    volumes:
+      - "./postgres1:/var/lib/postgresql"

@@ -1,0 +1,9 @@
+[submodule "PyPantograph"]
+	path = PyPantograph
+	url = https://github.com/lenianiva/PyPantograph
+[submodule "repl"]
+	path = repl
+	url = https://github.com/leanprover-community/repl
+[submodule "FLT"]
+	path = FLT
+	url = https://github.com/ImperialCollegeLondon/FLT

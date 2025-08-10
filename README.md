@@ -1,0 +1,30 @@
+# Conjecture extraction
+
+This repository contains the source code for conjecture extraction, an algorithm combining conjecture generation through informal reasoning models, online autoformalization, and online automated theorem proving to generate and prove conjectures (and ultimately the original statements) in the Lean theorem prover.
+
+## Navigating
+
+The main entrypoint is `./diophantineequations/distributed/main.py`, which runs the distributed experiments.
+Experiments use multiple simultaneous workers to process and generate conjectures, which communicate via RabbitMQ.
+
+You can find the entrypoints for workers in `./entrypoints/`, where some things need to be set for your custom setup.
+
+I'm also happy to provide slurm files privately, though not publicly in this repository.
+
+This repo uses `poetry` for dependency management. To install dependencies, run:
+
+```bash
+poetry install
+```
+
+
+Make sure to have Lean's elan installed, and a valid Lean project setup somewhere, which has to be provided to the workers / main script.
+
+## How does it work?
+
+The overall idea is this:
+![Ooverall overview](https://github.com/sorgfresser/conjectureextraction/raw/master/src/assets/overall.png "Overall overview")
+
+And the precise architecture is as follows:
+
+
