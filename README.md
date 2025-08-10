@@ -23,6 +23,7 @@ Make sure to have Lean's elan installed, and a valid Lean project setup somewher
 ## How does it work?
 
 The overall idea is this:
+
 ![Overall overview](https://raw.githubusercontent.com/sorgfresser/conjectureextraction/master/assets/overall.png "Overall overview")
 
 ## Precise architecture
